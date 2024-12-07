@@ -112,7 +112,6 @@ void initialize()
   }
   
   MH_Initialize();
-
   MH_CreateHook((LPVOID)strlen_addr, &strlen_cacher, (LPVOID*)&builtin_strlen);
   MH_CreateHook((LPVOID)netcat_insert_dedupe_addr, &netcat_insert_dedupe_hooked, NULL);
   
@@ -134,5 +133,5 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReversed)
     break;
   }
 
-  return TRUE;
+  return false;
 }
